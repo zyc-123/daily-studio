@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Studio · Docs</title>
+
+  <!-- Config (must load first — other scripts read CONFIG) -->
+  <script src="config.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/docs.css" />
+</head>
+<body class="docs">
+  <div class="app">
+
+    <!-- ── Sidebar (left) ───────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21.5z" />
+            <path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5a2.5 2.5 0 0 1 2.5 2.5z" />
+          </svg>
+        </div>
+        <span class="app-title" id="app-title">Daily Studio</span>
+        <span class="app-badge" id="app-badge">Docs</span>
+      </div>
+
+      <div class="clock-section">
+        <div class="time" id="time">--:--</div>
+        <div class="date" id="date">---</div>
+      </div>
+
+      <div class="greeting" id="greeting">Hello</div>
+
+      <div class="sidebar-footer">
+        <div class="sync-status-bar">
+          <span class="sync-dot" id="sync-dot" aria-hidden="true"></span>
+          <span class="sync-label" id="sync-label">Auto-saved</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Main Content (center) ─────────────────────────── -->
+    <main class="docs-main" id="docs-main">
+      <!-- Doc modules render here -->
+      <section class="docs-canvas" id="docs-canvas">
+        <div class="shelves" id="docs-shelves"></div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Application scripts -->
+  <script src="js/utils/storage.js"></script>
+  <script src="js/utils/file-store.js"></script>
+  <script src="js/utils/shell.js"></script>
+  <script src="js/utils/markdown.js"></script>
+  <script src="js/utils/doc-editor.js"></script>
+  <script src="js/utils/docs-shelves.js"></script>
+  <script src="js/utils/page-nav.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

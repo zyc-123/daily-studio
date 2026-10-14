@@ -1,0 +1,7 @@
+# Normalise line endings in the repository, so a clone on any platform
+# checks out the same bytes the author committed.
+* text=auto
+
+# Windows-only launchers: these must keep CRLF to run.
+*.bat text eol=crlf
+*.vbs text eol=crlf

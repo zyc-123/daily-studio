@@ -1,0 +1,30 @@
+# ── Personal data — never published ─────────────────────────────
+# Work logs, tasks and everything they reference. The app recreates
+# the folders it needs on first run, so a fresh clone works without
+# any of this.
+
+# Uploaded and referenced media (work-log images, PDFs)
+assets/
+
+# The library: files you uploaded and images inserted into notes
+docs/
+
+# Uploaded quick-link favicons
+icons/
+
+# Local development record
+dev-record.md
+
+# ── App data stores ─────────────────────────────────────────────
+# daily-studio-data.json holds ds_calendar (tasks), ds_quicklinks and
+# ds_worklog (the journal itself).
+daily-studio-data.json
+daily-studio-longterm.json
+daily-studio-docs.json
+
+# ── OS / editor noise ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~

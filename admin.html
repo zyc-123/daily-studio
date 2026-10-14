@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Studio · Admin</title>
+
+  <!-- Config (must load first — other scripts read CONFIG) -->
+  <script src="config.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin">
+  <div class="app">
+
+    <!-- ── Sidebar (left) ───────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="21" x2="4" y2="14" />
+            <line x1="4" y1="10" x2="4" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12" y2="3" />
+            <line x1="20" y1="21" x2="20" y2="16" />
+            <line x1="20" y1="12" x2="20" y2="3" />
+            <line x1="1" y1="14" x2="7" y2="14" />
+            <line x1="9" y1="8" x2="15" y2="8" />
+            <line x1="17" y1="16" x2="23" y2="16" />
+          </svg>
+        </div>
+        <span class="app-title" id="app-title">Daily Studio</span>
+        <span class="app-badge" id="app-badge">Admin</span>
+      </div>
+
+      <div class="clock-section">
+        <div class="time" id="time">--:--</div>
+        <div class="date" id="date">---</div>
+      </div>
+
+      <div class="greeting" id="greeting">Hello</div>
+
+      <div class="sidebar-footer">
+        <div class="sync-status-bar">
+          <span class="sync-dot" id="sync-dot" aria-hidden="true"></span>
+          <span class="sync-label" id="sync-label">Auto-saved</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Main Content (center) ─────────────────────────── -->
+    <main class="admin-main" id="admin-main">
+      <!-- Admin modules render here -->
+      <section class="admin-canvas" id="admin-canvas">
+        <div class="admin-settings">
+          <h2 class="admin-section-title">Page transition</h2>
+          <div class="admin-setting">
+            <div class="admin-setting-text">
+              <span class="admin-setting-title" id="toggle-wipe-label">Flood effect</span>
+              <span class="admin-setting-note">
+                The target page's accent spreads out of the icon and swallows the
+                current page before switching.
+              </span>
+            </div>
+            <button class="switch" id="toggle-wipe" type="button"
+                    role="switch" aria-checked="true" aria-labelledby="toggle-wipe-label">
+              <span class="switch-thumb"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Application scripts -->
+  <script src="js/utils/storage.js"></script>
+  <script src="js/utils/file-store.js"></script>
+  <script src="js/utils/shell.js"></script>
+  <script src="js/utils/page-nav.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

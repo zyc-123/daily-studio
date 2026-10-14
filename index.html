@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Studio</title>
+
+  <!-- Config (must load first — other scripts read CONFIG) -->
+  <script src="config.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ── Sidebar (left) ───────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-logo" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span class="app-title">Daily Studio</span>
+      </div>
+
+      <div class="clock-section">
+        <div class="time" id="time">--:--</div>
+        <div class="date" id="date">---</div>
+      </div>
+
+      <div class="greeting" id="greeting">Hello</div>
+
+      <div class="stats-section" id="stats">
+        <span class="stat-label">No tasks yet</span>
+      </div>
+
+      <div class="sidebar-worklog" id="worklog-library-section"></div>
+
+      <div class="sidebar-footer">
+        <div class="sync-status-bar">
+          <span class="sync-dot" id="sync-dot" aria-hidden="true"></span>
+          <span class="sync-label" id="sync-label">Auto-saved</span>
+        </div>
+        <button class="data-btn" id="data-export" title="Download backup of all data">Export Backup</button>
+      </div>
+    </aside>
+
+    <svg class="worklog-relationship" id="worklog-relationship" aria-hidden="true">
+      <path></path>
+      <circle r="4"></circle>
+    </svg>
+
+    <!-- ── Main Content (center) ─────────────────────────── -->
+    <main class="main" id="main-content">
+      <div class="main-left">
+        <!-- Day editor appears here when a calendar day is clicked -->
+        <div class="day-editor-section" id="day-editor-section">
+        <div class="day-editor-placeholder">
+          <div class="todo-empty">
+            <div class="todo-empty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <p>Select a day in the calendar to view or edit its tasks.</p>
+          </div>
+        </div>
+      </div>
+      <section class="worklog-section" id="worklog-section"></section>
+      </div><!-- /.main-left -->
+      <!-- Draggable divider -->
+      <div class="resize-handle" id="resize-handle"></div>
+      <section class="longterm-section" id="longterm-section"></section>
+    </main>
+
+    <!-- ── Calendar Panel (right) ────────────────────────── -->
+    <aside class="calendar-panel" id="calendar-panel">
+      <div class="cal-header">
+        <button class="cal-nav cal-prev" title="Previous month">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <span class="cal-month-label">August 2026</span>
+        <button class="cal-nav cal-next" title="Next month">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="cal-weekdays">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+        <span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+
+      <!-- Month grid (JS-rendered) -->
+      <div class="cal-grid"></div>
+
+      <button class="cal-today-btn cal-today-bottom">Today</button>
+
+      <!-- Quick Links section -->
+      <div class="quicklinks-section" id="quicklinks-section"></div>
+    </aside>
+
+  </div>
+
+  <section class="worklog-issues-panel" id="worklog-issues-panel" aria-label="Work log problems" hidden></section>
+
+  <!-- Application scripts -->
+  <script src="js/utils/storage.js"></script>
+  <script src="js/utils/calendar-storage.js"></script>
+  <script src="js/utils/quicklinks-storage.js"></script>
+  <script src="js/utils/longterm-storage.js"></script>
+  <script src="js/utils/quicklink-suggest.js"></script>
+  <script src="js/utils/file-store.js"></script>
+  <script src="js/utils/worklog-pdf.js"></script>
+  <script src="js/utils/shell.js"></script>
+  <script src="js/utils/page-nav.js"></script>
+  <script src="js/utils/markdown.js"></script>
+  <script src="js/components/calendar.js"></script>
+  <script src="js/components/work-log.js"></script>
+  <script src="js/components/quick-links.js"></script>
+  <script src="js/components/long-term.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
